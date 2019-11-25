@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0">
+	<title></title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="hickiesCss.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<!--<div class="container">-->
+			<!--<div class="row">-->
+				<div class="page" >
+					<h1 id="title">HICKIES Originals</h1>
+						<table>
+							<tr>
+								<td>
+								  <span class="glyphicon glyphicon-star"></span>
+								  <span class="glyphicon glyphicon-star"></span>
+								  <span class="glyphicon glyphicon-star"></span>
+								  <span class="glyphicon glyphicon-star"></span>
+								  <span class="glyphicon glyphicon-star"></span>
+								</td>
+								
+								<td>
+								<span class="box grey">1,293 reviews</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span id="price">$0.00</span>
+								</td>
+								<td>
+									<span class="grey">$17.99</span>
+								</td>
+								<td>
+									<span class="grey"><b>25% OFF</b></span>
+								</td>
+							</tr>
+							<tr>
+								<td><b>ONLINE EXCLUSIVE</b></td>
+							</tr>
+							
+						</table>
+
+					<p><b>COLOR:</b> <span id="check" class="colorValue">Pick a color</span></p>
+					
+					<div id="circles"></div> <!--coloured circles-->
+
+					<h5>Size Guide</h5>
+					<h6>Your Custom Fit</h6>
+				
+					<div><!--customFit and add to cart buttons-->
+						<button id="label" type="button" class="btn">0</button>
+						<button id="addToCart" type="button" class="btn" data-toggle="modal" data-target="" >Add to Cart</button>
+					</div>
+				  
+					<hr class="hr">
+					<h5>DETAILS</h5>
+					
+					<div id="items"></div><!--The items to be checkedOut-->
+					
+					<hr class="hr">
+					<h5 id="needHelp" data-toggle="modal" data-target="#needHelpModal">Need Help?</h5>
+					<h5>Shipping & Returns</h5>
+					<!--page content ends here-->
+					
+				<!--The modals-->
+					<!--Pick color modal-->
+					<!--This modal is will pop up whenever the add cart button is clicked yet no color is picked--> 
+				    <div class="modal fade" id="pickColor" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								</div>
+								<div class="modal-body">
+									<h4>Please pick a color</h4>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Okay</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				    <!--Add to cart modal-->
+					<!--Pops up everytime a color is picked and the add button is clicked-->
+					<div class="modal fade" id="add2Cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-body">
+									<h4>Please add the quantity of the item you have selected</h4>
+									<table id="table2">
+										<tr>
+											<td class="colorValue">
+											</td>
+											<td class="addQuantity">
+												<span class="glyphicon glyphicon-minus-sign"></span> <!--plus and minus signs. Used the glyphicon class-->
+												<span class="quantity">0</span>
+												<span class="glyphicon glyphicon-plus-sign"></span>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="modal-footer">
+									<div>
+										<button id="agree" type="button" class="btn btn-success" data-dismiss="modal">Agree</button>
+										<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!--checkout modal-->
+					<!--Pops up when checkout button is clicked-->
+					<div class="modal fade" id="checkout" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<span id="totalQuantity" class="fix">0</span><span class="fix">Items</span>
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button>
+								</div>
+								<div class="modal-body">
+									<div id="item" ></div>
+					
+								</div>
+								<div class="modal-footer">
+									<table>
+										<tr>
+											<td class="fix">Total to pay:</td>
+											<td id="total" class="fix"></td>
+										</tr>
+						
+									</table>
+									<button type="button" class="btn btn-success btn-lg" data-dismiss="modal">Pay Now</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!--Need help modal-->
+					<!--pops up when "Need help" text is clicked"-->
+					<div class="modal fade" id="needHelpModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button> 
+									<table>
+										<tr>
+											<td class="glyphicon glyphicon-envelope addQuantity"></td>
+											<td><h3 class="modal-title">Contact Us</h3></td>
+										</tr>
+									</table>
+								</div>
+								<div class="modal-body bg" >
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="panel-body">
+												<form role="form" >
+													<div class="form-group">
+														<input class="form-control" placeholder="First Name"  type="input">
+													</div>
+													<div class="form-gorup">
+														<input class="form-control" placeholder="Last Name" type="input" >
+													</div>
+													<div  class="form-group">
+														<input class="form-control" placeholder="What's your email" type="email" size='100'>
+													</div>
+													<div class="form-group">
+														<textarea name="comments" class="col-xs-12">Your questions...</textarea>
+													</div>
+								
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button class="btn btn-success" data-dismiss="modal">Submit</button> 
+								</div> 
+							</div>
+						</div>
+					</div>
+
+				</div>
+			<!--</div>-->
+		<!--</div>-->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="HickiesJs.js"></script>
+	</body>
+</html>
