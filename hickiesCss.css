@@ -1,0 +1,138 @@
+body{
+	background-color: #efefef;
+}
+.page{
+	border: 7px double;
+	padding: 10px;
+	border-radius: 20px;
+	background-color: #ffffff;
+	margin: 5px auto 5px auto;
+	
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight:bold;
+	color:black;
+}
+.grey{
+	color: grey;
+}
+#price{
+	color:red;
+	font-weight:bold;
+	font-size:25px;
+}
+.hr{
+	border-color:black;
+}
+.bg{
+	background:lightskyblue;
+}
+.colorValue{
+	text-transform:capitalize;
+}
+.colors{
+	width:32px;
+	height:32px;
+	border-radius:32px;
+	display: inline-block;
+	margin:10px 5px;
+
+}
+.border{
+	border: 3px solid #fff;
+	box-shadow: 0 0 0 1px grey;
+}
+.colorValue{
+	font-size: 20px;
+}
+#label{
+		width: 90px;
+		line-height:30px;
+		margin-right:10px;
+	}
+table{
+	border-spacing: 10px;
+	border-collapse: separate;
+	margin:5px;
+}
+
+#addToCart{
+	font-weight:bold;
+	background: black;
+	border-radius:40px;
+	color:#ffffff;
+	width: 280px;
+	line-height:30px;
+	
+	
+	
+}
+#label{
+	font-weight:bold;
+	background: transparent;
+	border-radius:40px;
+	border: 1px solid #000000;
+	color: #000000;
+	
+}
+
+.col-lg-4{
+	text-align: center;
+}
+.addQuantity{
+	font-size:40px;
+}
+input, textarea{
+	margin:10px;
+}
+.fix{
+	font-weight:bold;
+	font-size:20px;
+}
+#needHelp, .colors,.glyphicon-plus-sign, .glyphicon-minus-sign:hover{
+	cursor: pointer;
+}
+
+/*MEDIA QUERIES*/
+@media(min-width: 1200px){
+	.page{
+		max-width: 50%;
+	}
+}
+
+@media(min-width: 700px) and (max-width:1199px){
+	.page{
+		max-width: 75%;
+	}
+	
+}
+@media(min-width: 400px) and (max-width:699px){
+	.page{
+		max-width: 100%;
+		height: 100%;
+		padding:3px 5px 3px 5px;
+	}
+	#title{
+		font-size:30px;
+	}
+	#addToCart{
+		width: 200px;
+		line-height:20px;
+	}
+	#label{
+		width: 90px;
+		line-height:20px;
+		margin-right:10px;
+	}
+	table{
+		border-spacing: 5px;
+		border-collapse: collapse;
+		margin:5px;
+	}
+	#price{
+		font-size:20px;
+	}
+	.colorValue{
+		font-size: 18px
+	}
+}
