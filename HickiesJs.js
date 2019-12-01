@@ -195,6 +195,7 @@ agreeButton.addEventListener("click",agreeFunc);
 addQuantity.addEventListener("click",add);
 minusQuantity.addEventListener("click",minus);
 addToCartButton.addEventListener("click",addToCartFunc);
+payNow.addEventListener('click',refreshPage);
 for(let i of clickCir){
 	i.addEventListener('click',clickCirFunc);
 }
