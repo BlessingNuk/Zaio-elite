@@ -84,10 +84,7 @@ function clickCirFunc(){
 	current.classList.add('border');
 	currentColour= current.style.backgroundColor;
 	
-	document.querySelector('.page').style.borderColor = currentColour;
-	document.querySelector('#addToCart').style.color = currentColour;
-	document.querySelector('#price').style.color = currentColour;
-	
+	changeColor(currentColour);
 	addToCartButton.dataset.target = '#add2Cart';
 	addToCartButton.innerHTML = 'Add to Cart'
 	
@@ -117,6 +114,12 @@ function items(){
 		obj.drawCircle('#items')
 	}
 	
+}
+
+function changeColor(color){
+	document.querySelector('.page').style.borderColor = color;
+	document.querySelector('#addToCart').style.color = color;
+	document.querySelector('#price').style.color = color;
 }
 
 function removeBorder(){
@@ -164,6 +167,29 @@ function minus(){
 	}
 }
 
+function refreshPage(){
+	quantity=0 
+	totalQuantity=0;
+	totalPrice = 0;
+	
+	document.querySelector('#price').innerHTML = '$'+totalPrice+'.00';
+	document.querySelector('#totalQuantity').innerHTML = totalQuantity + " ";
+	document.querySelector('#total').innerHTML = '$'+totalPrice+'.00';
+	
+	document.querySelector("#check").innerHTML="Pick a color"
+	document.querySelector('#item').innerHTML = '';
+	document.querySelector('#items').innerHTML = '';
+	addToCartButton.innerHTML = 'Add to Cart'
+	
+	for(i of document.querySelectorAll('.quantity')){
+		i.innerHTML = quantity ;
+	}
+	document.querySelector('#label').innerHTML = quantity;
+	
+	changeColor('#000000')
+	removeBorder();
+	
+}
 /*Event listeners*/
 agreeButton.addEventListener("click",agreeFunc);
 addQuantity.addEventListener("click",add);
